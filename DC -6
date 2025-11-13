@@ -1,0 +1,32 @@
+clc;
+clear;
+close;
+
+disp("* Name –Yukta Chaudhari  *");
+
+
+N = 4;       
+M = 2^N;      
+
+x = 0:M-1;   
+
+
+theta = (2 * %pi * x) / M;   
+z = exp(%i * theta);         
+
+scf(0);
+subplot(1,2,1);
+scatter(real(z), imag(z), "fill");
+h = gca();
+h.data_bounds = [-1.5, 1.5, -1.5, 1.5];
+xtitle('* Name-Om Vishnu Taur Roll no. - E3125 * M-ary PSK', 'In-phase', 'Quadrature');
+
+m = sqrt(M);
+a = -m + 1 : 2 : m - 1;     
+[yI, yQ] = ndgrid(a, a);
+y = yI(:) + %i * yQ(:);      
+subplot(1,2,2);
+scatter(real(y), imag(y), "fill");
+h = gca();
+h.data_bounds = [-3.5, 3.5, -3.5, 3.5];
+xtitle('M-QAM', 'In-phase', 'Quadrature');
